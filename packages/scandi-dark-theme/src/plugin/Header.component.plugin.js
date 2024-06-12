@@ -5,8 +5,8 @@ import "./Header.style.plugin";
 export const renderTopMenu = (args, callback, instance) => {
     return (
         <>
-            <ModeToggleButtonComponent />
             {callback(...args)}
+            <ModeToggleButtonComponent />
         </>
     );
 };
