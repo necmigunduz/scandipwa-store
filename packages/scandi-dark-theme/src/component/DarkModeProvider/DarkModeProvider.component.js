@@ -1,21 +1,19 @@
 // src/component/DarkModeProvider/DarkModeProvider.component.js
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DarkModeContext } from '../../context/DarkModeContext';
+
+import './DarkModeProvider.style';
 
 class DarkModeProvider extends Component {
-    static contextType = DarkModeContext;
-
     render() {
-        const { children } = this.props;
-        const { isDarkModeEnabled } = this.context;
-
+        const { children, isDarkModeEnabled } = this.props;
+        console.log("PROPS", this.props)
         return (
-            <div block="DarkModeProvider" mods={{ isEnabled: isDarkModeEnabled }}>
-                {children}
-            </div>
+          <div block="DarkModeProvider" mods={{ isEnabled: isDarkModeEnabled }}>
+            {children}
+          </div>
         );
-    }
+      }
 }
 
 DarkModeProvider.propTypes = {
